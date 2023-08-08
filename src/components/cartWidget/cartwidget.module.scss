@@ -1,0 +1,21 @@
+.cartBtn {
+  margin: 1rem;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 2rem;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  color: #fff;
+
+  // &:hover {
+  //   color: hsl(39, 100%, 40%);
+  // }
+
+  .productsCount {
+    color: orange;
+    // font-size: 1.8rem;
+  }
+}
