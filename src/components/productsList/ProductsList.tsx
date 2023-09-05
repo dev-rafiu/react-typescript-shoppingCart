@@ -18,7 +18,6 @@ export const ProductsList: FunctionComponent = () => {
   const { products, isLoading, errorMessage, isError } = useFetchProducts();
 
   const addToCart = (product: ProductType): void => {
-    // console.log(product);
     product.quantity = 1;
     setCart((prevCart) => ({
       ...prevCart,
