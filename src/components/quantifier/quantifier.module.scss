@@ -1,11 +1,25 @@
-.quantifierButtons {
+.quantifier {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  max-width: 20rem;
+  margin: 1rem auto;
 
   button {
-    background: transparent;
+    background-color: #213547;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
     border: none;
+    color: #fff;
+    font-size: 1rem;
+
+    cursor: pointer;
+  }
+
+  .quantity {
+    color: #213547;
+    font-weight: bold;
+    font-size: 2rem;
   }
 }

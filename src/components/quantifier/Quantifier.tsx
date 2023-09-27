@@ -4,11 +4,13 @@ import classes from "./quantifier.module.scss";
 
 export const Quantifier: FunctionComponent = () => {
   return (
-    <div className={classes.quantifierButtons}>
+    <div className={classes.quantifier}>
       <button>
         <FaPlus />
       </button>
-      <span></span>
+
+      <span className={classes.quantity}>0</span>
+
       <button>
         <FaMinus />
       </button>
