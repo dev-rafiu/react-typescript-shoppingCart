@@ -12,6 +12,7 @@ interface Props {
 
 export const Product: FunctionComponent<Props> = ({ product, addToCart }) => {
   const { id, price, thumbnail, title } = product;
+
   return (
     <li className={classes.product}>
       <Link to={`/products/${id}`}>

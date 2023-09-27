@@ -1,0 +1,20 @@
+.productDetails {
+  text-align: center;
+
+  .productImg {
+    display: block;
+    width: min(100%, 28rem);
+    margin: 1rem auto;
+    height: 15rem;
+    object-fit: cover;
+    border-radius: inherit;
+    border-radius: 4px;
+  }
+
+  .homeLink {
+    display: block;
+    text-decoration: none;
+    color: #213547;
+    margin-top: 2rem;
+  }
+}

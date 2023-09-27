@@ -14,7 +14,7 @@ export interface CartProps {
 }
 
 export const ProductsList: FunctionComponent = () => {
-  const [cart, setCart] = useState<ProductType[]>([]);
+  const [, setCart] = useState<ProductType[]>([]);
   const { products, isLoading, errorMessage, isError } = useFetchProducts();
 
   const addToCart = (product: ProductType): void => {
@@ -25,8 +25,8 @@ export const ProductsList: FunctionComponent = () => {
     }));
   };
 
-  const isInCart = (productId: number): boolean =>
-    Object.keys(cart || {}).includes(productId.toString());
+  // const isInCart = (productId: number): boolean =>
+  //   Object.keys(cart || {}).includes(productId.toString());
 
   if (isLoading) {
     return <Loader />;
