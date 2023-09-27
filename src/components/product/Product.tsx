@@ -20,17 +20,19 @@ export const Product: FunctionComponent<Props> = ({ product, addToCart }) => {
           alt="product image"
           className={classes.productImg}
         />
+
         <div className={classes.info}>
           <h5>{title}</h5>
           <p>{CurrencyFormatter(price)}</p>
         </div>
-        <button
-          onClick={() => addToCart(product)}
-          className={classes.btnAddToCart}
-        >
-          Add To Cart
-        </button>
       </Link>
+
+      <button
+        onClick={() => addToCart(product)}
+        className={classes.btnAddToCart}
+      >
+        Add To Cart
+      </button>
     </li>
   );
 };
