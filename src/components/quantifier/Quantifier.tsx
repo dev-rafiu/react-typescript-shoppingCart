@@ -43,9 +43,7 @@ export const Quantifier: FunctionComponent<Props> = ({
       <button onClick={decrease}>
         <FaMinus />
       </button>
-
       <span className={classes.quantity}>{value}</span>
-
       <button onClick={increase}>
         <FaPlus />
       </button>

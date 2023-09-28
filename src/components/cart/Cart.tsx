@@ -58,12 +58,13 @@ export const Cart: FunctionComponent = () => {
 
               return (
                 <li key={id} className={classes.product}>
+                  {/* product image */}
                   <img
                     src={thumbnail}
                     alt={image}
                     className={classes.productImage}
                   />
-
+                  {/* product details */}
                   <div className={classes.productDetails}>
                     <p>{title}</p>
                     <Quantifier
