@@ -8,9 +8,14 @@ import { Link } from "react-router-dom";
 interface Props {
   product: ProductType;
   addToCart: (product: ProductType) => void;
+  isInCart: (productId: number) => boolean;
 }
 
-export const Product: FunctionComponent<Props> = ({ product, addToCart }) => {
+export const Product: FunctionComponent<Props> = ({
+  product,
+  addToCart,
+  isInCart,
+}) => {
   const { id, price, thumbnail, title } = product;
 
   return (
@@ -29,6 +34,7 @@ export const Product: FunctionComponent<Props> = ({ product, addToCart }) => {
       </Link>
 
       <button
+        disabled={isInCart(id)}
         onClick={() => addToCart(product)}
         className={classes.btnAddToCart}
       >

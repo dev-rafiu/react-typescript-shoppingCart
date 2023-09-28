@@ -8,13 +8,14 @@ import { useFetchProducts } from "../../hooks/api/useFetchProducts";
 import { Product } from "../product/Product";
 import { Loader } from "../loader";
 import classes from "./productsList.module.scss";
+import useLocalStorageState from "use-local-storage-state";
 
 export interface CartProps {
   [productId: string]: ProductType;
 }
 
 export const ProductsList: FunctionComponent = () => {
-  const [, setCart] = useState<ProductType[]>([]);
+  const [cart, setCart] = useLocalStorageState<CartProps>("cart", {});
   const { products, isLoading, errorMessage, isError } = useFetchProducts();
 
   const addToCart = (product: ProductType): void => {
@@ -25,8 +26,9 @@ export const ProductsList: FunctionComponent = () => {
     }));
   };
 
-  // const isInCart = (productId: number): boolean =>
-  //   Object.keys(cart || {}).includes(productId.toString());
+  const isInCart = (productId: number): boolean => {
+    return Object.keys(cart || {}).includes(productId.toString());
+  };
 
   if (isLoading) {
     return <Loader />;
@@ -40,7 +42,12 @@ export const ProductsList: FunctionComponent = () => {
     <ul className={classes.productsList}>
       {products.map((product) => {
         return (
-          <Product key={product.id} product={product} addToCart={addToCart} />
+          <Product
+            key={product.id}
+            product={product}
+            addToCart={addToCart}
+            isInCart={isInCart}
+          />
         );
       })}
     </ul>

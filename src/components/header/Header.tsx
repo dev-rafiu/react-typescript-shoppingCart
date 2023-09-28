@@ -1,15 +1,21 @@
 import { FunctionComponent, useState } from "react";
 import { CartWidget } from "../cartWidget";
 import classes from "./header.module.scss";
+import { Link } from "react-router-dom";
+import useLocalStorageState from "use-local-storage-state";
+import { CartProps } from "../productsList/ProductsList";
 
 export const Header: FunctionComponent = () => {
-  const [productsCount, setProductsCount] = useState(0);
+  const [cart] = useLocalStorageState<CartProps>("cart", {});
+  const productsCount: number = Object.keys(cart || {}).length;
+
   return (
     <header className={classes.header}>
-      <div className={classes.logo}>Buy Online</div>
-      <div>
-        <CartWidget productsCount={productsCount} />
-      </div>
+      <Link to="/" className={classes.logo}>
+        Buy Online
+      </Link>
+
+      <CartWidget productsCount={productsCount} />
     </header>
   );
 };
