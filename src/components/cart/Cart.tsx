@@ -47,10 +47,6 @@ export const Cart: FunctionComponent = () => {
 
   return (
     <section className={classes.cart}>
-      <header className={classes.cartHeader}>
-        <h1>Your Cart</h1>
-      </header>
-
       {getProducts().length == 0 ? (
         <p>You have an empty cart</p>
       ) : (
