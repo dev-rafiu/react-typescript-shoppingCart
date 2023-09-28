@@ -1,4 +1,29 @@
 .cart {
+  border: 1px solid #213547;
+
+  .product {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .cartHeader {
+    margin-bottom: 2rem;
+  }
+
+  .cartItems {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .productImage {
+    width: 8rem;
+    height: 7rem;
+    object-fit: cover;
+    // border-radius: 3px;
+  }
+
   .homeLink {
     display: block;
     text-decoration: none;

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import classes from "./cart.module.scss";
 import useLocalStorageState from "use-local-storage-state";
 import { CartProps } from "../productsList/ProductsList";
+import { Quantifier } from "../quantifier";
 
 export const Cart: FunctionComponent = () => {
   const [cart, setCart] = useLocalStorageState<CartProps>("cart", {}); // reading the local storage value via the hook here
@@ -12,15 +13,25 @@ export const Cart: FunctionComponent = () => {
 
   return (
     <section className={classes.cart}>
-      <h1>Cart</h1>
+      <header className={classes.cartHeader}>
+        <h1>Cart</h1>
+      </header>
 
-      <ul>
+      <ul className={classes.cartItems}>
         {getProducts().map((product) => {
-          const { id, title } = product;
+          const { id, title, image, thumbnail } = product;
 
           return (
-            <li key={id}>
-              <p>{title}</p>
+            <li key={id} className={classes.product}>
+              <img
+                src={thumbnail}
+                alt={image}
+                className={classes.productImage}
+              />
+              <div>
+                <p>{title}</p>
+                <Quantifier />
+              </div>
             </li>
           );
         })}
