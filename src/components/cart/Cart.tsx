@@ -25,31 +25,37 @@ export const Cart: FunctionComponent = () => {
         <h1>Your Cart</h1>
       </header>
 
-      <ul className={classes.cartItems}>
-        {getProducts().map((product) => {
-          const { id, title, image, thumbnail } = product;
+      {getProducts().length == 0 ? (
+        <p>You have an empty cart</p>
+      ) : (
+        <>
+          <ul className={classes.cartItems}>
+            {getProducts().map((product) => {
+              const { id, title, image, thumbnail } = product;
 
-          return (
-            <li key={id} className={classes.product}>
-              <img
-                src={thumbnail}
-                alt={image}
-                className={classes.productImage}
-              />
-              <div>
-                <p>{title}</p>
-                <Quantifier />
-              </div>
-            </li>
-          );
-        })}
-      </ul>
+              return (
+                <li key={id} className={classes.product}>
+                  <img
+                    src={thumbnail}
+                    alt={image}
+                    className={classes.productImage}
+                  />
+                  <div>
+                    <p>{title}</p>
+                    <Quantifier />
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
 
-      <div className={classes.subtotal}>
-        <p>
-          Subtotal(0 items): <span>$0.00</span>
-        </p>
-      </div>
+          <div className={classes.subtotal}>
+            <p>
+              Subtotal(0 items): <span>$0.00</span>
+            </p>
+          </div>
+        </>
+      )}
 
       <Link to="/" className={classes.homeLink}>
         Back to home
