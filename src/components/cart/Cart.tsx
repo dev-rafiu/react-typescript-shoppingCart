@@ -14,7 +14,7 @@ export const Cart: FunctionComponent = () => {
   return (
     <section className={classes.cart}>
       <header className={classes.cartHeader}>
-        <h1>Cart</h1>
+        <h1>Your Cart</h1>
       </header>
 
       <ul className={classes.cartItems}>
@@ -36,6 +36,12 @@ export const Cart: FunctionComponent = () => {
           );
         })}
       </ul>
+
+      <div className={classes.subtotal}>
+        <p>
+          Subtotal(0 items): <span>$0.00</span>
+        </p>
+      </div>
 
       <Link to="/" className={classes.homeLink}>
         Back to home

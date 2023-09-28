@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import { FunctionComponent } from "react";
 // import useLocalStorageState from "use-local-storage-state";
 import { ProductType } from "../../lib/ProductType";
