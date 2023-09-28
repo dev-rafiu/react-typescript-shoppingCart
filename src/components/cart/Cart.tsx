@@ -7,9 +7,17 @@ import { Quantifier } from "../quantifier";
 
 export const Cart: FunctionComponent = () => {
   const [cart, setCart] = useLocalStorageState<CartProps>("cart", {}); // reading the local storage value via the hook here
-  console.log(cart);
-
   const getProducts = () => Object.values(cart || {}); // method for getting all products data as an array data structure, that will allow us easier iteration later
+
+  const handleRemoveProduct = (productId: number): void => {
+    setCart((prevCart) => {
+      const updatedCart = { ...prevCart };
+      delete updatedCart[productId];
+      return updatedCart;
+    });
+  };
+
+  console.log(handleRemoveProduct);
 
   return (
     <section className={classes.cart}>

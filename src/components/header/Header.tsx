@@ -1,4 +1,4 @@
-import { FunctionComponent, useState } from "react";
+import { FunctionComponent } from "react";
 import { CartWidget } from "../cartWidget";
 import classes from "./header.module.scss";
 import { Link } from "react-router-dom";
