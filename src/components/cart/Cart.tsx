@@ -63,7 +63,8 @@ export const Cart: FunctionComponent = () => {
                     alt={image}
                     className={classes.productImage}
                   />
-                  <div>
+
+                  <div className={classes.productDetails}>
                     <p>{title}</p>
                     <Quantifier
                       handleRemoveProduct={handleRemoveProduct}
