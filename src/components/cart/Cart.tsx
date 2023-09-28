@@ -4,7 +4,7 @@ import classes from "./cart.module.scss";
 import useLocalStorageState from "use-local-storage-state";
 import { CartProps } from "../productsList/ProductsList";
 import { Quantifier } from "../quantifier";
-import { Subtotal } from "../subtotal/Subtotal";
+import { Subtotal } from "../subtotal";
 import { Operation } from "../quantifier/Quantifier";
 
 export const Cart: FunctionComponent = () => {
