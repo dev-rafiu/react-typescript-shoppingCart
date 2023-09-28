@@ -82,7 +82,7 @@ export const Cart: FunctionComponent = () => {
       )}
 
       <Link to="/" className={classes.homeLink}>
-        Back to home
+        return to homepage
       </Link>
     </section>
   );

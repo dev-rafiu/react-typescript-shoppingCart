@@ -30,9 +30,15 @@
   }
 
   .homeLink {
-    display: block;
+    display: inline-block;
     text-decoration: none;
     color: #213547;
     margin-top: 2rem;
+
+    @media (hover: hover) {
+      &:hover {
+        color: hsl(205, 78%, 60%);
+      }
+    }
   }
 }
