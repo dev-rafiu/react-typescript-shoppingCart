@@ -3,10 +3,13 @@
   justify-content: center;
   padding: 3rem 0;
   font-size: 1rem;
-  letter-spacing: 2px;
+
+  p {
+    display: flex;
+    gap: 0.5rem;
+  }
 
   .amount {
     font-size: 1rem;
-    font-weight: bold;
   }
 }
