@@ -2,6 +2,10 @@
   width: min(100%, 500px);
   margin: 0 auto;
 
+  .cartTitle {
+    text-align: center;
+  }
+
   .product {
     display: flex;
     gap: 1rem;

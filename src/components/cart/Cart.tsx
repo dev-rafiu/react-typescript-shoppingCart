@@ -48,7 +48,7 @@ export const Cart: FunctionComponent = () => {
   return (
     <section className={classes.cart}>
       {getProducts().length == 0 ? (
-        <p>You have an empty cart</p>
+        <h1 className={classes.cartTitle}>You have an empty cart</h1>
       ) : (
         <>
           {/* cart items */}
