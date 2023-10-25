@@ -15,16 +15,19 @@
   }
 
   .productImage {
-    width: 12rem;
-    height: 7rem;
+    width: 10rem;
+    height: 5rem;
     object-fit: cover;
+    border-radius: 5px;
   }
 
   .homeLink {
-    display: inline-block;
+    display: block;
     text-decoration: none;
     color: #213547;
     margin-top: 1rem;
+    text-align: center;
+    font-size: 14px;
 
     @media (hover: hover) {
       &:hover {
