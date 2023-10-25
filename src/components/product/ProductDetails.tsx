@@ -6,22 +6,21 @@ import { Link } from "react-router-dom";
 // import { Quantifier } from "../quantifier";
 
 export const ProductDetails: FunctionComponent = () => {
-  // const { id } = useParams();
-  const { product } = useFetchProduct();
+  const { data } = useFetchProduct();
 
   return (
     <article className={classes.productDetails}>
       <h1>Product Details</h1>
 
       <img
-        src={product?.thumbnail}
+        src={data?.thumbnail}
         alt="product image"
         className={classes.productImg}
       />
-      <p>{product?.title}</p>
+      <p>{data?.title}</p>
 
       <Link to="/" className={classes.homeLink}>
-        Back Home
+        Back to home
       </Link>
     </article>
   );

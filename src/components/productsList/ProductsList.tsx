@@ -1,5 +1,4 @@
 import { FunctionComponent } from "react";
-// import useLocalStorageState from "use-local-storage-state";
 import { ProductType } from "../../lib/ProductType";
 
 import { useFetchProducts } from "../../hooks/api/useFetchProducts";
@@ -14,7 +13,7 @@ export interface CartProps {
 
 export const ProductsList: FunctionComponent = () => {
   const [cart, setCart] = useLocalStorageState<CartProps>("cart", {});
-  const { products, isLoading, errorMessage, isError } = useFetchProducts();
+  const { data, isLoading, isError } = useFetchProducts();
 
   const addToCart = (product: ProductType): void => {
     product.quantity = 1;
@@ -33,12 +32,12 @@ export const ProductsList: FunctionComponent = () => {
   }
 
   if (isError) {
-    return <h3 className="">{errorMessage}</h3>;
+    return <h3 className="">An error occured</h3>;
   }
 
   return (
     <ul className={classes.productsList}>
-      {products.map((product) => {
+      {data.products?.map((product: ProductType) => {
         return (
           <Product
             key={product.id}
