@@ -24,7 +24,7 @@ export const Product: FunctionComponent<Props> = ({
         <img src={thumbnail} alt={title} className={classes.productImg} />
 
         <div className={classes.info}>
-          <h5>{title}</h5>
+          <p>{title}</p>
           <p>{CurrencyFormatter(price)}</p>
         </div>
       </Link>
