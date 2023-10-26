@@ -4,6 +4,7 @@ import classes from "./product.module.scss";
 import CurrencyFormatter from "../utils/currencyFormatter";
 
 import { Link } from "react-router-dom";
+import AddToCartBtn from "./addToCartButton";
 
 interface Props {
   product: ProductType;
@@ -29,13 +30,7 @@ export const Product: FunctionComponent<Props> = ({
         </div>
       </Link>
 
-      <button
-        disabled={isInCart(id)}
-        onClick={() => addToCart(product)}
-        className={classes.btnAddToCart}
-      >
-        Add To Cart
-      </button>
+      <AddToCartBtn action={addToCart} isInCart={isInCart} product={product} />
     </li>
   );
 };

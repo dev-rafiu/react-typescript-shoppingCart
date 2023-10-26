@@ -1,6 +1,7 @@
 import { FunctionComponent, useState } from "react";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import classes from "./quantifier.module.scss";
+import QuantifierBtn from "../ui/quantifierButton";
 // import { ProductType } from "../../lib/ProductType";
 
 export type Operation = "decrease" | "increase";
@@ -19,19 +20,15 @@ export const Quantifier: FunctionComponent<Props> = ({
   const [value, setValue] = useState(1);
 
   const increase = () => {
-    setValue((prev) => {
-      return (prev += 1);
-    });
+    setValue((prev) => (prev += 1));
 
     handleUpdateQuantity(id, "increase");
   };
 
   const decrease = () => {
     setValue((prev) => {
-      if (value <= 1) {
-        console.log("less than 1");
-        handleRemoveProduct(id);
-      }
+      if (value <= 1) handleRemoveProduct(id);
+
       return (prev -= 1);
     });
 
@@ -40,13 +37,9 @@ export const Quantifier: FunctionComponent<Props> = ({
 
   return (
     <div className={classes.quantifier}>
-      <button onClick={decrease}>
-        <FaMinus />
-      </button>
+      <QuantifierBtn action={decrease} Icon={<FaMinus />} />
       <span className={classes.quantity}>{value}</span>
-      <button onClick={increase}>
-        <FaPlus />
-      </button>
+      <QuantifierBtn action={increase} Icon={<FaPlus />} />
     </div>
   );
 };

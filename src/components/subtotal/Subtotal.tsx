@@ -1,5 +1,6 @@
 import { FunctionComponent } from "react";
 import classes from "./subtotal.module.scss";
+import currencyFormatter from "../utils/currencyFormatter";
 
 type Props = {
   total: number;
@@ -11,7 +12,7 @@ export const Subtotal: FunctionComponent<Props> = ({ total, totalItems }) => {
     <div className={classes.subtotal}>
       <p>
         Subtotal ({`${totalItems} ${totalItems > 1 ? `items` : `item`}`} )
-        <span className={classes.amount}>GHS {total}</span>
+        <span className={classes.amount}>{currencyFormatter(total)}</span>
       </p>
     </div>
   );

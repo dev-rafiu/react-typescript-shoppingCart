@@ -23,18 +23,16 @@ export const Cart: FunctionComponent = () => {
   const handleUpdateQuantity = (productId: number, operation: Operation) => {
     setCart((prevCart) => {
       const updatedCart = { ...prevCart };
-      if (updatedCart[productId]) {
-        if (operation === "increase") {
-          updatedCart[productId] = {
-            ...updatedCart[productId],
-            quantity: updatedCart[productId].quantity + 1,
-          };
-        } else {
-          updatedCart[productId] = {
-            ...updatedCart[productId],
-            quantity: updatedCart[productId].quantity - 1,
-          };
-        }
+      if (updatedCart[productId] && operation === "increase") {
+        updatedCart[productId] = {
+          ...updatedCart[productId],
+          quantity: updatedCart[productId].quantity + 1,
+        };
+      } else {
+        updatedCart[productId] = {
+          ...updatedCart[productId],
+          quantity: updatedCart[productId].quantity - 1,
+        };
       }
       return updatedCart;
     });
@@ -50,7 +48,7 @@ export const Cart: FunctionComponent = () => {
       {getProducts().length == 0 ? (
         <h1 className={classes.cartTitle}>You have an empty cart</h1>
       ) : (
-        <>
+        <section>
           {/* cart items */}
           <ul className={classes.cartItems}>
             {getProducts().map((product) => {
@@ -80,7 +78,7 @@ export const Cart: FunctionComponent = () => {
 
           {/* sub total */}
           <Subtotal total={subtotal} totalItems={totalItems} />
-        </>
+        </section>
       )}
 
       <Link to="/" className={classes.homeLink}>
