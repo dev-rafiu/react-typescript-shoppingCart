@@ -3,9 +3,9 @@ import { ProductType } from "../../lib/ProductType";
 
 import { useFetchProducts } from "../../hooks/api/useFetchProducts";
 import { Product } from "../product/Product";
-import { Loader } from "../loader";
 import classes from "./productsList.module.scss";
 import useLocalStorageState from "use-local-storage-state";
+import Skeleton from "../skeleton";
 
 export interface CartProps {
   [productId: string]: ProductType;
@@ -28,7 +28,7 @@ export const ProductsList: FunctionComponent = () => {
   };
 
   if (isLoading) {
-    return <Loader />;
+    return <Skeleton />;
   }
 
   if (isError) {
