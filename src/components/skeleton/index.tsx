@@ -7,7 +7,7 @@ function Skeleton() {
           .map((_, idx) => {
             return (
               <li
-                className="h-48 w-full animate-pulse bg-gray-300 grid-cols-[repeat(auto-fit, minmax(200px, 1fr))] rounded"
+                className="h-48 w-full animate-pulse bg-gray-300 grid-cols-[repeat(auto-fit, minmax(400px, 1fr))] rounded"
                 key={idx}
               ></li>
             );
