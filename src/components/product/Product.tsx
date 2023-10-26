@@ -21,11 +21,7 @@ export const Product: FunctionComponent<Props> = ({
   return (
     <li className={classes.product}>
       <Link to={`/products/${id}`}>
-        <img
-          src={thumbnail}
-          alt="product image"
-          className={classes.productImg}
-        />
+        <img src={thumbnail} alt={title} className={classes.productImg} />
 
         <div className={classes.info}>
           <h5>{title}</h5>
