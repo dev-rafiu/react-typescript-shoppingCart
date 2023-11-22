@@ -16,7 +16,11 @@ export const CartWidget: FunctionComponent<Props> = ({ productsCount }) => {
   };
 
   return (
-    <button onClick={navigateToCartPage} className={classes.cartBtn}>
+    <button
+      onClick={navigateToCartPage}
+      className={classes.cartBtn}
+      data-testid="cart-widget-btn"
+    >
       <FaShoppingCart />
       <span className={classes.productsCount}>{productsCount}</span>
     </button>

@@ -11,11 +11,11 @@ export const Header: FunctionComponent = () => {
 
   return (
     <header className={classes.header}>
-      <Link to="/" className={classes.logo} id="shop-name" role="link">
+      <Link to="/" className={classes.logo}>
         Buy Online
       </Link>
 
-      <CartWidget productsCount={productsCount} />
+      <CartWidget data-testid="cart-widget" productsCount={productsCount} />
     </header>
   );
 };

@@ -13,9 +13,9 @@ describe("Header", () => {
     );
   });
 
-  it("renders correctly the logo", () => {
-    expect(
-      screen.getByAltText(/Shoping Cart Application/i)
-    ).toBeInTheDocument();
+  it("renders correctly the shopping cart widget", () => {
+    expect(screen.queryByText(/Buy Online/i)).toBeInTheDocument();
+
+    expect(screen.getByTestId("cart-widget-btn")).toBeInTheDocument();
   });
 });
