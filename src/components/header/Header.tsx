@@ -11,7 +11,7 @@ export const Header: FunctionComponent = () => {
 
   return (
     <header className={classes.header}>
-      <Link to="/" className={classes.logo}>
+      <Link to="/" className={classes.logo} id="shop-name" role="link">
         Buy Online
       </Link>
 
