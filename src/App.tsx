@@ -1,5 +1,6 @@
 // import { useState } from "react";
 import Cart from "./components/cart/Cart";
+import { Footer } from "./components/footer/Footer";
 import { Header } from "./components/header";
 import { ProductDetails } from "./components/product/ProductDetails";
 import { ProductsList } from "./components/productsList/ProductsList";
@@ -16,6 +17,7 @@ function App() {
           <Route path="/products/:id" element={<ProductDetails />} />
         </Routes>
       </div>
+      <Footer />
     </>
   );
 }
