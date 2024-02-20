@@ -1,12 +1,17 @@
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   background-color: #213547;
   padding: 1rem;
 
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: min(90%, 1200px);
+    margin: 0 auto;
+  }
+
   .logo {
     color: #fff;
-    font-size: 1em;
+    font-size: 1.2em;
   }
 }
