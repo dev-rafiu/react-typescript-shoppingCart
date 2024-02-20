@@ -13,5 +13,5 @@ async function fetchProduct(id: string | undefined) {
 export function useFetchProduct() {
   const { id } = useParams();
 
-  return useQuery({ queryKey: ["post"], queryFn: () => fetchProduct(id) });
+  return useQuery({ queryKey: ["product"], queryFn: () => fetchProduct(id) });
 }
