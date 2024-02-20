@@ -12,7 +12,7 @@ function AddToCartBtn({ isInCart, action, product }: Props) {
     <button
       disabled={isInCart(product.id)}
       onClick={() => action(product)}
-      className={classes.btnAddToCart}
+      className={classes.cartBtn}
     >
       Add to cart
     </button>

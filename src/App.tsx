@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import Cart from "./components/cart/Cart";
 import { Footer } from "./components/footer/Footer";
 import { Header } from "./components/header";
@@ -8,17 +7,17 @@ import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <>
+    <div className="flex flex-col min-h-screen space-y-8">
       <Header />
-      <div className="container">
+      <main className="container grow">
         <Routes>
           <Route path="/" element={<ProductsList />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/products/:id" element={<ProductDetails />} />
         </Routes>
-      </div>
+      </main>
       <Footer />
-    </>
+    </div>
   );
 }
 

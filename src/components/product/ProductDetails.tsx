@@ -6,25 +6,36 @@ import { Link } from "react-router-dom";
 export const ProductDetails: FunctionComponent = () => {
   const { isLoading, data } = useFetchProduct();
 
-  return (
-    <article className={classes.productDetails}>
-      <h1>Product Details</h1>
+  {
+    if (isLoading)
+      return (
+        <article className={classes.productDetails}>
+          <div className={classes.productImg} />
+          <div className={classes.info}>
+            <p className="bg-gray-300 w-[10rem] h-8"></p>
+            <p className="bg-gray-300 w-[20rem] max-w-[25rem] h-8"></p>
+          </div>
+        </article>
+      );
+  }
 
-      {isLoading ? (
-        <div className="width: min(100%, 30rem) bg-gray-200 h-[20rem] animate-pulse"></div>
-      ) : (
-        <>
-          <img
-            src={data?.thumbnail}
-            alt="product image"
-            className={classes.productImg}
-          />
-          <p className={classes.productTitle}>{data?.title}</p>
-          <Link to="/" className={classes.homeLink}>
-            return to home
-          </Link>
-        </>
-      )}
-    </article>
+  return (
+    <>
+      <article className={classes.productDetails}>
+        <img
+          src={data?.thumbnail}
+          alt="product image"
+          className={classes.productImg}
+        />
+        <div className={classes.info}>
+          <h3 className={classes.productTitle}>{data?.title}</h3>
+          <p className={classes.productDesc}>{data?.description}</p>
+        </div>
+      </article>
+
+      <Link to="/" className={classes.homeLink}>
+        return home
+      </Link>
+    </>
   );
 };

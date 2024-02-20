@@ -2,13 +2,13 @@
   width: min(100%, 500px);
   margin: 0 auto;
 
-  .cartTitle {
-    text-align: center;
-  }
-
   .product {
     display: flex;
     gap: 1rem;
+
+    p {
+      font-size: 14px;
+    }
   }
 
   .cartItems {
@@ -19,7 +19,7 @@
   }
 
   .productImage {
-    width: 10rem;
+    width: 15rem;
     height: 5rem;
     object-fit: cover;
     border-radius: 5px;
