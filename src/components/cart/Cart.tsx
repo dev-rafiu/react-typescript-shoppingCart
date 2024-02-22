@@ -52,24 +52,29 @@ export const Cart: FunctionComponent = () => {
           {/* cart items */}
           <ul className={classes.cartItems}>
             {getProducts().map((product) => {
-              const { id, title, image, thumbnail } = product;
+              const { id, title, image, thumbnail, price } = product;
 
               return (
-                <li key={id} className={classes.product}>
-                  {/* product image */}
+                <li key={id} className={classes.cartItem}>
                   <img
                     src={thumbnail}
                     alt={image}
                     className={classes.productImage}
                   />
-                  {/* product details */}
-                  <div className={classes.productDetails}>
-                    <p>{title}</p>
-                    <Quantifier
-                      handleRemoveProduct={handleRemoveProduct}
-                      handleUpdateQuantity={handleUpdateQuantity}
-                      id={id}
-                    />
+
+                  <div className={classes.infoWrapper}>
+                    <header className={classes.itemHeader}>
+                      <p>{title}</p>
+                      <p>GH₵ {price}</p>
+                    </header>
+
+                    <div className={classes.productDetails}>
+                      <Quantifier
+                        handleRemoveProduct={handleRemoveProduct}
+                        handleUpdateQuantity={handleUpdateQuantity}
+                        id={id}
+                      />
+                    </div>
                   </div>
                 </li>
               );
